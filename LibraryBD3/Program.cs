@@ -12,6 +12,7 @@ namespace LibraryBD3
         {
             using (Library3Entities db = new Library3Entities())
             {
+                db.Configuration.LazyLoadingEnabled = false;
                 //1
                 Console.WriteLine("Выведите список должников");
                 var tempRes1 = db.AuditLibrary.Include("Person").ToList();
@@ -31,7 +32,7 @@ namespace LibraryBD3
                     Console.WriteLine(item.Author.FirstName + " " + item.Author.LastName);
                 }
 
-
+                //3
                 Console.WriteLine();
                 Console.WriteLine("Выведите список книг, которые доступны в данный момент");
                 var tempRes3 = db.AuditLibrary.Include("Book").ToList();
@@ -47,7 +48,7 @@ namespace LibraryBD3
                     Console.WriteLine(item.Title);
                 }
 
-
+                //4
                 Console.WriteLine();
                 Console.WriteLine("Вывести список книг, которые на руках у пользователя №2(3)");
                 var tempRes4 = db.Person.Include("AuditLibrary.Book").Where(p => p.Id == 3).FirstOrDefault();
@@ -56,7 +57,7 @@ namespace LibraryBD3
                     Console.WriteLine(item.Book.Title);
                 }
 
-
+                //5
                 Console.WriteLine();
                 Console.WriteLine("Обнулите задолженности всех должников");
                 var trans = db.Database.BeginTransaction();
