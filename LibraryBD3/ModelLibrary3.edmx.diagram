@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d51de00a645a48148ec52f209bec02fe" Name="Diagram1">
+        <EntityTypeShape EntityType="Library3Model.AuditLibrary" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library3Model.Author" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library3Model.Book" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library3Model.Person" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library3Model.Publisher" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library3Model.RelationAuthorBook" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library3Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="Library3Model.FK__AuditLibr__IdBoo__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="Library3Model.FK__AuditLibr__IdPer__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="Library3Model.FK__RelationA__IdAut__1920BF5C" ManuallyRouted="false" />
+        <AssociationConnector Association="Library3Model.FK__Book__IdPublishe__164452B1" ManuallyRouted="false" />
+        <AssociationConnector Association="Library3Model.FK__RelationA__IdBoo__1A14E395" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
