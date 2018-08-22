@@ -12,6 +12,7 @@ namespace LibraryBD3
         {
             using (Library3Entities db = new Library3Entities())
             {
+                db.Database.Log = Console.WriteLine;
                 db.Configuration.LazyLoadingEnabled = false;
                 //1
                 Console.WriteLine("Выведите список должников");
@@ -61,10 +62,13 @@ namespace LibraryBD3
                 Console.WriteLine();
                 Console.WriteLine("Обнулите задолженности всех должников");
                 var trans = db.Database.BeginTransaction();
+                // first query
                 Console.WriteLine($"Было записей: {db.AuditLibrary.Count()}");
                 try
                 {
+                    // second query(main)
                     db.Database.ExecuteSqlCommand("TRUNCATE TABLE[AuditLibrary]");
+                    // third query
                     Console.WriteLine($"Стало записей: {db.AuditLibrary.Count()}");
                     trans.Rollback();
                     Console.WriteLine("Отмена изменений");
